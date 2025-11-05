@@ -1,0 +1,62 @@
+
+これからの変更予定
+
+・ディレクトリ構造
+DM参照
+
+・exit
+上流でどのように使うのかが不明なため、とりあえず関数全体をコメントアウト
+
+errorまとめたいな
+
+
+
+・Libft
+該当する関数を削除、headerとmakefile変更
+ft_atoiに関してlong long対応にしたため、名称変更
+ft_atoi -> ft_long_atoi
+
+
+
+・CMD
+CMD 0　への変更に伴い　OPT（option） 1　に
+
+
+
+・argc統一について
+ac av evのほうが文字数少ないし
+一気に変更する時　ac -> argcよりもargc -> acのほうが他の関数巻き込みにくくない？
+わかりにくい..？
+
+なんかargv argcにしてくれてるからそっちに合わせる
+
+
+・builtin.hでできない、多分ディレクトリ構造を変えたらできそう
+
+・echo
+echo -n-n helloへの対応
+
+whileで-nがあるかを探す行を追加
+boolのやつも面白くて好きだけど今回は一行で直せる感じがしたので追加という形に
+全然試さず勢いでプルリクエストしたのがバレてますね
+
+修正後の動き
+nmasuda@c3r3s4:~/clone/nana/includes$ echo -n hello -n
+hello -nnmasuda@c3r3s4:~/clone/nana/includes$ ./built echo -n hello -n
+hello -nnmasuda@c3r3s4:~/clone/nana/includes$ echo -n -n hello
+hellonmasuda@c3r3s4:~/clone/nana/includes$ ./built echo -n -n hello
+hellonmasuda@c3r3s4:~/clone/nana/includes$ echo hello -n
+hello -n
+nmasuda@c3r3s4:~/clone/nana/includes$ ./built echo hello -n
+hello -n
+nmasuda@c3r3s4:~/clone/nana/includes$ 
+
+
+・cd
+対応中（明日には完成）
+
+・＋α
+関数の引数と戻り値をevで統一する
+
+
+明日には終わりそう！！
