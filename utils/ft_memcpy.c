@@ -6,11 +6,11 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 21:22:58 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/10/22 21:25:20 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/08 20:47:24 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/builtin.h"
+#include "builtin.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

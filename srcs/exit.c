@@ -6,11 +6,11 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:43:46 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/05 22:48:12 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/08 20:47:24 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/builtin.h"
+#include "builtin.h"
 
 static void	echo_exit(char **line, int exit_num, char *mess, int many_arg)
 {
@@ -25,7 +25,6 @@ static void	echo_exit(char **line, int exit_num, char *mess, int many_arg)
 
 char	**c_exit(char **line, char **ev)
 {
-	size_t		i;
 	int			error;
 	long long	num;
 

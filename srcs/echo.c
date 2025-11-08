@@ -6,11 +6,11 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:43:26 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/05 22:47:17 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/08 18:20:48 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/builtin.h"
+#include "builtin.h"
 
 static void	echo_print(char **line)
 {

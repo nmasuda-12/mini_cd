@@ -6,11 +6,11 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:43:37 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/05 22:47:46 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/08 20:47:24 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/builtin.h"
+#include "builtin.h"
 
 char	**c_env(char **line, char **ev)
 {

@@ -6,11 +6,11 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:27:39 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/10/21 17:50:49 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/08 20:47:24 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/builtin.h"
+#include "builtin.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

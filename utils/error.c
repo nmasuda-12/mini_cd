@@ -6,11 +6,11 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:54:33 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/10/22 16:41:14 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/08 20:47:24 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/builtin.h"
+#include "builtin.h"
 
 void	error(char *bash, char *mess, char **line, int exit_num)
 {
