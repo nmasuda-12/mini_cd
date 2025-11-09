@@ -8,7 +8,7 @@ MAIN_SRCS =		srcs/echo.c \
 	   		srcs/env.c \
 			srcs/unset.c \
 			srcs/exit.c \
-			srcs/a_export.c \
+			srcs/export.c \
 			srcs/cd.c \
 	   		srcs/main.c \
 

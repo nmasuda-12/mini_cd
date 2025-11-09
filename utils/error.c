@@ -6,7 +6,7 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:54:33 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/08 20:47:24 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/10 01:54:54 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	error(char *bash, char *mess, char **line, int exit_num)
 {
-	int	i;
-
-	i = 0;
 	if (line)
 		free_all(line);
 	if (bash)

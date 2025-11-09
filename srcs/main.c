@@ -6,7 +6,7 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:46:38 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/08 20:47:24 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/10 01:56:14 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ char **	built_in_check(char **line, char **ev)
 
 int	main(int argc, char **argv, char **ev)
 {
-	char	**new_ev;
+	// char	**new_ev;
 
 	(void)argc;
-	new_ev = NULL;
-	new_ev = built_in_check(argv, ev);
+	built_in_check(argv, ev);
 	return (0);
 }
