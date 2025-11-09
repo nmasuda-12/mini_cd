@@ -6,7 +6,7 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:46:38 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/10 01:56:14 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/10 03:33:29 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ char **	built_in_check(char **line, char **ev)
 	// 	new_ev = c_pwd(line, ev);
 	// else if (!ft_strncmp(line[CMD], "env", 4))
 	// 	new_ev = c_env(line, ev);
-	// else if (!ft_strncmp(line[CMD], "cd", 3))
-	// {
-	// 	new_ev = c_cd(line, ev);
-	// 	c_check(line[0], new_ev);
-	// }
+	if (!ft_strncmp(line[CMD], "cd", 3))
+	{
+		new_ev = c_cd(line, ev);
+		c_check(line[0], new_ev);
+	}
 	// else if (!ft_strncmp(line[CMD], "exit", 5))
 	// 	new_ev = c_exit(line, ev);
 	// else if (!ft_strncmp(line[CMD], "unset", 6))
 	// 	new_ev = c_unset(line, ev);
-	if (!ft_strncmp(line[CMD], "export", 7))
-		new_ev = c_export(line, ev);
+	// else if (!ft_strncmp(line[CMD], "export", 7))
+	// 	new_ev = c_export(line, ev);
 	return (new_ev);
 }
 
