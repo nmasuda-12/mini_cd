@@ -6,7 +6,7 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:46:38 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/10 03:33:29 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/10 03:37:00 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,15 @@ char **	built_in_check(char **line, char **ev)
 	if (!ft_strncmp(line[CMD], "cd", 3))
 	{
 		new_ev = c_cd(line, ev);
-		c_check(line[0], new_ev);
+		int i = 0;
+		while(new_ev[i])
+		{
+			if(!ft_strncmp(new_ev[i],"PWD=",4))
+				printf("%s\n",new_ev[i]);
+			if(!ft_strncmp(new_ev[i],"OLDPWD=",7))
+				printf("%s\n",new_ev[i]);
+			i++;
+		}
 	}
 	// else if (!ft_strncmp(line[CMD], "exit", 5))
 	// 	new_ev = c_exit(line, ev);
