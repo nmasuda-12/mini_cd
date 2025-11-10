@@ -3,7 +3,7 @@ NAME = built
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I includes
 
-MAIN_SRCS =		srcs/echo.c \
+MAIN_SRCS =	srcs/echo.c \
 	   		srcs/pwd.c \
 	   		srcs/env.c \
 			srcs/unset.c \
@@ -13,14 +13,7 @@ MAIN_SRCS =		srcs/echo.c \
 			srcs/cd.c \
 	   		srcs/main.c \
 
-UTIL_SRCS =		utils/ft_atoi.c \
-			utils/ft_memcmp.c \
-			utils/ft_memcpy.c \
-			utils/ft_putstr_fd.c \
-			utils/ft_strncmp.c \
-			utils/ft_strlen.c \
-			utils/ft_strdup.c \
-			utils/ft_strjoin.c \
+UTIL_SRCS =	utils/ft_atol.c \
 			utils/ft_export_strjoin.c \
 			utils/check.c \
 			utils/error.c \

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:39:12 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/08 20:47:24 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/10 17:50:51 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static bool	ft_overflow(long long res, char *st, int neg)
 	return (true);
 }
 
-long long	ft_atoi(char *st, int *error)
+long long	ft_atol(char *st, int *error)
 {
 	int					neg;
 	unsigned long long	res;

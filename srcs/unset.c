@@ -6,7 +6,7 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 17:46:10 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/08 20:47:24 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/10 18:05:20 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 static bool	unset_arg_skip(char **line, char **ev, int j)
 {
-	int	i;
+	int		i;
+	size_t	len;
 
 	i = 1;
+	len = ft_strlen(line[CMD + i]);
 	while (line[CMD + i])
 	{
-		if (!(ft_strncmp(ev[j], line[CMD + i], ft_strlen(line[CMD + i]))))
-			return (true);
+		if (!ft_strncmp(ev[j], line[CMD + i], len))
+		{
+			if (ev[j][len] == '=' || ev[j][len] == '\0')
+				return (true);
+		}
 		else
 			i++;
 	}

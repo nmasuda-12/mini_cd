@@ -54,19 +54,10 @@ void		c_check(char *bash, char **check);
 void		free_all(char **res);
 
 //-----utils---------
-int			ft_strncmp(char *s1, const char *s2, size_t n);
-size_t		ft_strlen(const char *str);
-long long	ft_atoi(char *st, int *error);
-char		*ft_strdup(const char *s);
-int			ft_memcmp(const void *s1, const void *s2);
+long long	ft_atol(char *st, int *error);
 char		*ft_export_strjoin(char const *s1, char const *s2);
-char		*ft_strjoin(char const *s1, char const *s2);
-void		ft_putstr_fd(char *s, int fd);
-char		**ft_split(char const *s, char c);
-void		*ft_memcpy(void *dest, const void *src, size_t n);
-
 int			ev_strlen(char *line);
-char		**chenge(char **new_ev, int i, int j);
+char		**change(char **new_ev, int i, int j);
 char		**sort(char **new_ev);
 void		join_error_check(char **new_ev, char **line, int i, int j);
 

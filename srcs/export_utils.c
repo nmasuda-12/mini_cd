@@ -6,7 +6,7 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:31:26 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/10 17:41:58 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/10 17:59:30 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ev_strlen(char *line)
 	return (i);
 }
 
-char	**chenge(char **new_ev, int i, int j)
+char	**change(char **new_ev, int i, int j)
 {
 	char	*tmp;
 
@@ -43,7 +43,7 @@ char	**sort(char **new_ev)
 	{
 		if (ft_memcmp(new_ev[i], new_ev[j]) > 0)
 		{
-			new_ev = chenge(new_ev, i, j);
+			new_ev = change(new_ev, i, j);
 			i = 0;
 			j = i + 1;
 		}
