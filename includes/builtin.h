@@ -65,4 +65,9 @@ void		ft_putstr_fd(char *s, int fd);
 char		**ft_split(char const *s, char c);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 
+int			ev_strlen(char *line);
+char		**chenge(char **new_ev, int i, int j);
+char		**sort(char **new_ev);
+void		join_error_check(char **new_ev, char **line, int i, int j);
+
 #endif

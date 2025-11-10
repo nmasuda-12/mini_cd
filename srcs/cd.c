@@ -6,7 +6,7 @@
 /*   By: nmasuda <nmasuda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 20:48:31 by nmasuda           #+#    #+#             */
-/*   Updated: 2025/11/10 03:53:56 by nmasuda          ###   ########.fr       */
+/*   Updated: 2025/11/10 16:48:17 by nmasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ static void	t_pwd_free(t_pwd *pwd, char *mess)
 
 static void	add_missing_pwds(t_pwd *pwd, int ev_len)
 {
-	int j = ev_len;
+	int	j;
+
+	j = ev_len;
 	if (pwd->f_new_pwd)
 	{
 		pwd->new_ev[j] = ft_strjoin("PWD=", pwd->new_pwd);
@@ -48,11 +50,11 @@ static void	add_missing_pwds(t_pwd *pwd, int ev_len)
 
 static char	**change_pwd(t_pwd *pwd)
 {
-	int	i = 0;
-	int	new_i = 0;
+	int	i;
+	int	new_i;
 
-    pwd->f_new_pwd = 1;
-	pwd->f_old_pwd = 1;
+	i = 0;
+	new_i = 0;
 	while (pwd->ev[i])
 	{
 		if (!ft_strncmp(pwd->ev[i], "PWD=", 4))
@@ -72,46 +74,47 @@ static char	**change_pwd(t_pwd *pwd)
 		i++;
 	}
 	add_missing_pwds(pwd, new_i);
-	t_pwd_free(pwd, NULL);
-	return (pwd->new_ev);
+	return (t_pwd_free(pwd, NULL), pwd->new_ev);
+}
+
+static void	move_pwd(t_pwd *pwd, char *bash, char *chpath)
+{
+	pwd->old_pwd = getcwd(NULL, 0);
+	if (!pwd->old_pwd)
+		error(NULL, "cd_getpwd_error\n", NULL, 1);
+	if (chdir(chpath) == -1)
+	{
+		free(pwd->old_pwd);
+		error(bash, ": cd: No such file or directory\n", NULL, 1);
+	}
+	pwd->new_pwd = getcwd(NULL, 0);
+	if (!pwd->new_pwd)
+		t_pwd_free(pwd, "cd_getpwd_error\n");
 }
 
 char	**c_cd(char **line, char **ev)
 {
 	char	*chpath;
 	t_pwd	pwd;
-	int		ev_len = 0;
+	int		ev_len;
 
+	ev_len = 0;
+	pwd.f_new_pwd = 1;
+	pwd.f_old_pwd = 1;
 	ft_memcpy(&pwd, &(t_pwd){0}, sizeof(t_pwd));
 	pwd.ev = ev;
 	while (ev[ev_len])
 		ev_len++;
-
 	if (line[CMD + 2] && line[CMD + 1])
 		error(line[0], ": cd: too many arguments\n", NULL, 1);
-
 	if (!line[CMD + 1] || ft_strncmp(line[CMD + 1], "~", 2) == 0)
 		chpath = getenv("HOME");
 	else
 		chpath = line[CMD + 1];
-
-	pwd.old_pwd = getcwd(NULL, 0);
-	if (!pwd.old_pwd)
-		error(NULL, "cd_getpwd_error\n", NULL, 1);
-
-	if (chdir(chpath) == -1)
-	{
-		free(pwd.old_pwd);
-		error(line[0], ": cd: No such file or directory\n", NULL, 1);
-	}
-
-	pwd.new_pwd = getcwd(NULL, 0);
-	if (!pwd.new_pwd)
-		t_pwd_free(&pwd, "cd_getpwd_error\n");
-
-	pwd.new_ev = malloc(sizeof(char *) * (ev_len + 3)); // 余裕をもって確保
+	move_pwd(&pwd, line[0], chpath);
+	pwd.new_ev = malloc(sizeof(char *) * (ev_len + 3));
 	if (!pwd.new_ev)
 		t_pwd_free(&pwd, "cd_malloc_error\n");
-
 	return (change_pwd(&pwd));
 }
+
